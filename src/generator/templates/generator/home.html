@@ -2,10 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Salom Django</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <title>Parol generator</title>
 </head>
 <body>
-    <h1>Salom hammaga</h1>
-    <a href="{% url 'about' %}">about</a>
+<div class="container text-center">
+    <h3>Home page select skills password:</h3>
+    <form action="{% url 'parol' %}">
+        <select  name="length" id="">
+            <option value="6" selected>6</option>
+            <option value="7">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+        </select> length
+        <br>
+        <input type="checkbox" name="uppercase"> Uppercase
+        <br>
+        <input type="checkbox" name="numbers"> Numbers
+        <br>
+        <input type="checkbox" name="special"> Special characters
+        <br>
+        <input type="submit" value="generate" class="btn btn-primary btn-sm">
+    </form>
+    </div>
 </body>
+<script>
+    function refreshPage(){
+    window.location.reload();
+}
+</script>
 </html>
